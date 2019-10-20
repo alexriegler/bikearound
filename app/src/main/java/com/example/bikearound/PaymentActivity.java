@@ -11,6 +11,8 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.DatePicker;
@@ -66,6 +68,33 @@ public class PaymentActivity extends AppCompatActivity implements DatePickerDial
         rateChargeText = (TextView) findViewById(R.id.rate_charge_text_id);
         totalCostText = (TextView) findViewById(R.id.total_text_id) ;
         durationEditText = (EditText) findViewById(R.id.duration_edit_text_id);
+
+        // Watch for changes in duration box
+        durationEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // no implementation
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // no implementation
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!(s.toString().equals("") & (s.toString() != null))) {
+                    duration = Integer.parseInt(durationEditText.getText().toString());
+                }
+                else {
+                    duration = DEFAULT_DURATION;
+                }
+                rateCharge = rate * duration;
+                rateChargeText.setText(String.format(Locale.US, "%d.00", rateCharge));
+                totalCost = FLAT_FEE + rateCharge;
+                totalCostText.setText(String.format(Locale.US, "$%d.00", totalCost));
+            }
+        });
 
         // Calculate fees
         rate = HOURLY_RATE;
