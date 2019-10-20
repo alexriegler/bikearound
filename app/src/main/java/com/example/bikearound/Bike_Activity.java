@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ public class Bike_Activity extends AppCompatActivity {
 
     private TextView tvname, tvtype, tvdescription;
     private ImageView img;
+    private Button contactButton, checkoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class Bike_Activity extends AppCompatActivity {
         tvtype = (TextView) findViewById(R.id.txtType);
         tvdescription = (TextView) findViewById(R.id.txtDescription);
         img = (ImageView) findViewById(R.id.bikethumbnail);
+        checkoutButton = (Button) findViewById(R.id.checkout_button_id);
 
         // Receive data
         Intent intent = getIntent();
@@ -34,5 +37,11 @@ public class Bike_Activity extends AppCompatActivity {
         tvtype.setText(type);
         tvdescription.setText(description);
         img.setImageResource(image);
+
+        // Checkout button
+        checkoutButton.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, PaymentActivity.class);
+            this.startActivity(intent1);
+        });
     }
 }
