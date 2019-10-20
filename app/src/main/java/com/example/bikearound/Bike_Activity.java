@@ -41,7 +41,8 @@ public class Bike_Activity extends AppCompatActivity {
         img.setImageResource(image);
 
         // Contact button
-        contactButton.setOnClickListener(v -> Toast.makeText(this, "No info available", Toast.LENGTH_SHORT).show());
+        contactButton.setOnClickListener(v ->
+                Toast.makeText(this, "No info available", Toast.LENGTH_SHORT).show());
 
         // Checkout button
         checkoutButton.setOnClickListener(v -> {
