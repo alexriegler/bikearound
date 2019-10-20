@@ -27,7 +27,9 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:layout_weight="1"
-            android:gravity="left"/>
+            android:gravity="left"
+            android:onClick="dateOnClick"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/time_text_id"
@@ -37,7 +39,9 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:layout_weight="1"
-            android:gravity="right"/>
+            android:gravity="right"
+            android:onClick="timeOnClick"
+            android:clickable="true"/>
 
     </LinearLayout>
 
