@@ -48,6 +48,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 // Pass data to the bike activity
                 intent.putExtra("Name", mData.get(position).getBikeName());
+                intent.putExtra("Type", mData.get(position).getBikeType());
                 intent.putExtra("Description", mData.get(position).getDescription());
                 intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
 

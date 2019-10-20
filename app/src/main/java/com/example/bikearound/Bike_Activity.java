@@ -25,11 +25,13 @@ public class Bike_Activity extends AppCompatActivity {
         // Receive data
         Intent intent = getIntent();
         String name = intent.getExtras().getString("Name");
+        String type = intent.getExtras().getString("Type");
         String description = intent.getExtras().getString("Description");
         int image = intent.getExtras().getInt("Thumbnail");
 
         // Setting values
         tvname.setText(name);
+        tvtype.setText(type);
         tvdescription.setText(description);
         img.setImageResource(image);
     }
