@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     android:background="#fcfcfc"
     tools:context=".Bike_Activity">
@@ -12,19 +11,22 @@
     <ImageView
         android:id="@+id/bikethumbnail"
         android:layout_width="match_parent"
-        android:layout_height="127dp"
+        android:layout_height="0dp"
         android:layout_margin="16dp"
         android:background="#2d2d2d"
-        android:scaleType="fitCenter"/>
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/txtName"
         android:text="Bike Name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/txtType"
@@ -33,14 +35,21 @@
         android:layout_height="wrap_content"
         android:background="#edecec"
         android:padding="8dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/txtDescription"
         android:text="Description"
         android:textSize="18sp"
         android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="top"
+        android:layout_weight="1"/>
 
 </LinearLayout>
