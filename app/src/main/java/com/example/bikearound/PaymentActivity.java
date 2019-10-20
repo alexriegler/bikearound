@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
 import com.plaid.link.Plaid;
 import com.plaid.linkbase.models.LinkCancellation;
 import com.plaid.linkbase.models.LinkConfiguration;
@@ -72,8 +74,6 @@ public class PaymentActivity extends AppCompatActivity implements DatePickerDial
                 PaymentActivity.this,
                 new LinkConfiguration.Builder("Test App", products).build(),
                 LINK_REQUEST_CODE);
-//        Intent intent = new Intent(this, MainActivity.class);
-//        this.startActivity(intent);
     }
 
     @Override
@@ -82,47 +82,15 @@ public class PaymentActivity extends AppCompatActivity implements DatePickerDial
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == LINK_REQUEST_CODE && data != null) {
             if (resultCode == Plaid.RESULT_SUCCESS) {
-                LinkConnection item = (LinkConnection) data.getSerializableExtra(Plaid.LINK_RESULT);
-                if (item != null) {
-                    LinkConnectionMetadata metadata = item.getLinkConnectionMetadata();
-                    contentTextView.setText(getString(
-                            R.string.content_success,
-                            item.getPublicToken(),
-                            metadata.getAccounts().get(0).getAccountId(),
-                            metadata.getAccounts().get(0).getAccountName(),
-                            metadata.getInstitutionId(),
-                            metadata.getInstitutionName()));
-                }
+                Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                this.startActivity(intent);
             } else if (resultCode == Plaid.RESULT_CANCELLED) {
-                LinkCancellation cancellation = (LinkCancellation) data.getSerializableExtra(Plaid.LINK_RESULT);
-                if (cancellation != null) {
-                    contentTextView.setText(getString(
-                            R.string.content_cancelled,
-                            cancellation.getInstitutionId(),
-                            cancellation.getInstitutionName(),
-                            cancellation.getLinkSessionId(),
-                            cancellation.getStatus()));
-                }
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else if (resultCode == Plaid.RESULT_EXIT) {
-                PlaidApiError error = (PlaidApiError) data.getSerializableExtra(Plaid.LINK_RESULT);
-                if (error != null) {
-                    contentTextView.setText(getString(
-                            R.string.content_exit,
-                            error.getDisplayMessage(),
-                            error.getErrorCode(),
-                            error.getErrorMessage(),
-                            error.getLinkExitMetadata().getInstitutionId(),
-                            error.getLinkExitMetadata().getInstitutionName(),
-                            error.getLinkExitMetadata().getStatus()));
-                }
+                Toast.makeText(this, "Exited", Toast.LENGTH_LONG).show();
             } else if (resultCode == Plaid.RESULT_EXCEPTION) {
-                Exception exception = (Exception) data.getSerializableExtra(Plaid.LINK_RESULT);
-                if (exception != null) {
-                    contentTextView.setText(getString(
-                            R.string.content_exception,
-                            exception.getClass().toString(),
-                            exception.getMessage()));
-                }
+                Toast.makeText(this, "Exception occurred", Toast.LENGTH_LONG).show();
             }
         }
     }
