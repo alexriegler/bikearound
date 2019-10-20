@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Bike_Activity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class Bike_Activity extends AppCompatActivity {
         tvtype = (TextView) findViewById(R.id.txtType);
         tvdescription = (TextView) findViewById(R.id.txtDescription);
         img = (ImageView) findViewById(R.id.bikethumbnail);
+        contactButton = (Button) findViewById(R.id.contact_button_id);
         checkoutButton = (Button) findViewById(R.id.checkout_button_id);
 
         // Receive data
@@ -37,6 +39,9 @@ public class Bike_Activity extends AppCompatActivity {
         tvtype.setText(type);
         tvdescription.setText(description);
         img.setImageResource(image);
+
+        // Contact button
+        contactButton.setOnClickListener(v -> Toast.makeText(this, "No info available", Toast.LENGTH_SHORT).show());
 
         // Checkout button
         checkoutButton.setOnClickListener(v -> {
