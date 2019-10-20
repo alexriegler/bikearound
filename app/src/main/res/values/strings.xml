@@ -4,9 +4,9 @@
     <string name="checkout">Checkout</string>
     <string name="select_date">Checkout date:</string>
     <string name="select_rate">Select your rate:</string>
-    <string name="option1">Hourly</string>
-    <string name="option2">Daily</string>
-    <string name="option3">Weekly</string>
+    <string name="option1">$20/Hour</string>
+    <string name="option2">$45/Day</string>
+    <string name="option3">$100/Week</string>
     <string name="total">Total cost:</string>
     <string name="pay">Pay</string>
 
