@@ -13,6 +13,15 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import com.plaid.link.Plaid;
+import com.plaid.linkbase.models.LinkCancellation;
+import com.plaid.linkbase.models.LinkConfiguration;
+import com.plaid.linkbase.models.LinkConnection;
+import com.plaid.linkbase.models.LinkConnectionMetadata;
+import com.plaid.linkbase.models.PlaidApiError;
+import com.plaid.linkbase.models.PlaidProduct;
+import com.plaid.link.Plaid;
+import java.util.ArrayList;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -48,6 +57,12 @@ public class PaymentActivity extends AppCompatActivity implements DatePickerDial
 
     public void timeOnClick(View v) {
         showTimePickerDialog();
+    }
+
+    public void payButton(View v) {
+        ArrayList<PlaidProduct> products = new ArrayList<>();
+        products.add(PlaidProduct.TRANSACTIONS);
+        
     }
 
     private void showDatePickerDialog() {
