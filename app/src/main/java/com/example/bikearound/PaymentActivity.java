@@ -72,6 +72,8 @@ public class PaymentActivity extends AppCompatActivity implements DatePickerDial
                 PaymentActivity.this,
                 new LinkConfiguration.Builder("Test App", products).build(),
                 LINK_REQUEST_CODE);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        this.startActivity(intent);
     }
 
     @Override
