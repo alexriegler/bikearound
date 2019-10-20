@@ -2,7 +2,7 @@
     <string name="app_name">bikearound</string>
     <string name="contact">Contact</string>
     <string name="checkout">Checkout</string>
-    <string name="select_date">When would you like to checkout:</string>
+    <string name="select_date">Checkout date:</string>
     <string name="select_rate">Select your rate:</string>
     <string name="option1">Hourly</string>
     <string name="option2">Daily</string>

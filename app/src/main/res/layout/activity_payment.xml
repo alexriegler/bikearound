@@ -24,16 +24,20 @@
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:layout_weight="1"
-            android:gravity="center"/>
+            android:gravity="left"/>
 
         <TextView
             android:id="@+id/time_text_id"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:layout_weight="1"
-            android:gravity="center"/>
+            android:gravity="right"/>
 
     </LinearLayout>
 
