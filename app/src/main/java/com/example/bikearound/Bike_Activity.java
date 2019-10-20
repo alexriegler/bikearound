@@ -19,7 +19,7 @@ public class Bike_Activity extends AppCompatActivity {
 
         tvname = (TextView) findViewById(R.id.txtName);
         tvtype = (TextView) findViewById(R.id.txtType);
-        tvdescription = (TextView) findViewById(R.id.txtDesciption);
+        tvdescription = (TextView) findViewById(R.id.txtDescription);
         img = (ImageView) findViewById(R.id.bikethumbnail);
 
         // Receive data

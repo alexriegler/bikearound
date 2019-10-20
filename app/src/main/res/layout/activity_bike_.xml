@@ -4,57 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Bike_Activity"
-    android:background="#fcfcfc">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#fcfcfc"
+    tools:context=".Bike_Activity">
 
-    <androidx.core.widget.NestedScrollView
+    <ImageView
+        android:id="@+id/bikethumbnail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="127dp"
+        android:layout_margin="16dp"
+        android:background="#2d2d2d"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:text="Bike Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:textSize="18sp"
+        android:textStyle="bold"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtType"
+        android:text="Bike Type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#edecec"
+        android:padding="8dp"
+        android:layout_marginTop="10dp"/>
 
-            <ImageView
-                android:id="@+id/bikethumbnail"
-                android:layout_width="125dp"
-                android:layout_height="127dp"
-                android:background="#2d2d2d"
-                android:scaleType="fitCenter"/>
-
-            <TextView
-                android:id="@+id/txtName"
-                android:text="Bike Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/txtType"
-                android:text="Bike Type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#edecec"
-                android:padding="8dp"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
-                android:id="@+id/txtDesciption"
-                android:text="Description"
-                android:textSize="18sp"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/txtDescription"
+        android:text="Description"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
